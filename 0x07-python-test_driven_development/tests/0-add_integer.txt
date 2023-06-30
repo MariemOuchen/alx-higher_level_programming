@@ -1,0 +1,113 @@
+
+=====================================
+Adds two integers and returns the sum.
+=====================================
+
+
+Using "add_integer"
+===================
+    :param a: int
+    :param b: int
+    :returns: int
+
+
+Usage
+=====
+
+The function takes two arguments and use the "+" 
+ operation to sum them up.
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
+
+It works with negative integers as well.
+
+::
+
+    >>> add_integer(-6, 19)
+    13
+
+::
+
+    >>> add_integer(25, -8)
+    17
+
+::
+
+    >>> add_integer(-3, 4)
+    1
+
+When an argument is a float, the funcution first casts it
+ to integer.
+
+ ::
+
+    >>> add_integer(8, 2.4)
+    10
+
+::
+
+    >>> add_integer(3.1, 6.3)
+    9
+
+Negative float are allowed as well.
+
+::
+
+    >>> add_integer(-3.4, 4)
+    1
+
+The default value for the second argument is 98.
+
+::
+
+    >>> add_integer(3)
+    101
+
+Non-Numbers
+===========
+
+The arguments must be integers or float else the
+ function raises a TypeError.
+
+ ::
+
+    >>> add_integer("5", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(15, "r")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+::
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+The function fails when an argument is infinity
+
+::
+    >>> add_integer(4, float("inf"))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+::
+
+    >>> add_integer(float("inf"))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    The function does not work with NaN Numbers.
+
+::
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer

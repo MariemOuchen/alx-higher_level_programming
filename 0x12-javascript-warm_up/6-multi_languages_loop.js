@@ -1,5 +1,8 @@
 #!/usr/bin/node
-const loop = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
-for (let i = 0; i < loop.length; i++) {
-  console.log(loop[i]);
+
+let i = 2;
+
+while (i < process.argv.length) {
+  console.log(process.argv[i]);
+  i++;
 }
